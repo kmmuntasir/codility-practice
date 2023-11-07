@@ -8,11 +8,11 @@
 using namespace std;
 
 int solution(vector<int> &A) {
-    unsigned long long int size = A.size();
-    unsigned long long int sum = (size * (size+1)) / 2;
-    unsigned long long int vsum = accumulate(A.begin(), A.end(), 0);
+	unsigned long long int n1 = A.size() + 1;
+	unsigned long long int shouldBeSum = n1 * (n1 + 1) / 2;
+	unsigned long long int actualSum = accumulate(A.begin(), A.end(), 0);
 
-    return size - vsum + sum + 1;
+	return shouldBeSum - actualSum;
 }
 
 int main() { // Driver function
